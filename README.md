@@ -6,6 +6,8 @@ We have three models: `Viewer`, `Movie`, and `Review`.
 
 A `Movie` has many `Review`s. A `Viewer` has many `Review`s. A `Review` belongs to a `Viewer` and belongs to a `Movie`.
 
+*** Movie -< Reviews >- Reviews ***
+
 `Viewer` - `Movie` is a many to many relationship.
 
 **Note**: You should draw your domain on paper or on a whiteboard _before you start coding_. Remember to identify a single source of truth for your data.
@@ -46,74 +48,74 @@ Some of the methods listed are provided to you in the starter code. You should c
 
 #### Movie
 
-- `Movie#initialize(title)`
+X `Movie#initialize(title)`
   - `Movie` is initialized with a title (string)
   - title **can be** changed after the `Movie` is initialized
-- `Movie#title`
+X `Movie#title`
   - returns the `Movie`'s title
-- `Movie.all`
+X `Movie.all`
   - returns an array of all the `Movie` instances that have been initialized
 
 #### Viewer
 
-- `Viewer#initialize(username)`
+X `Viewer#initialize(username)`
   - `Viewer` is initialized with a username (string)
   - username **can be** changed after the Viewer is initialized
-- `Viewer#username`
+X `Viewer#username`
   - returns the Viewer's username
-- `Viewer.all`
+X `Viewer.all`
   - returns an array of all the Viewer instances that have been initialized
 
 #### Review
 
-- `Review#initialize(viewer, movie, rating)`
+X `Review#initialize(viewer, movie, rating)`
   - `Review` is initialized with a `Viewer` instance, a `Movie` instance, and a rating (number)
-- `Review#rating`
+X `Review#rating`
   - returns the rating for the `Review` instance
-- `Review.all`
+X `Review.all`
   - returns an array of all initialized `Review` instances
 
 ### Object Relationship Methods
 
 #### Review
 
-- `Review#viewer`
+X `Review#viewer`
   - returns the `Viewer` instance associated with the `Review` instance
-- `Review#movie`
+X `Review#movie`
   - returns the `Movie` instance associated with the `Review` instance
 
 #### Viewer
 
-- `Viewer#reviews`
+X `Viewer#reviews`
   - returns an array of `Review` instances associated with the `Viewer` instance.
-- `Viewer#reviewed_movies`
+X `Viewer#reviewed_movies`
   - returns an array of `Movie` instances reviewed by the `Viewer` instance.
 
 #### Movie
 
-- `Movie#reviews`
+X `Movie#reviews`
   - returns an array of all the `Review` instances for the `Movie`.
-- `Movie#reviewers`
+X `Movie#reviewers`
   - returns an array of all of the `Viewer` instances that reviewed the `Movie`.
 
 ### Aggregate and Association Methods
 
 #### Viewer
 
-- `Viewer#reviewed_movie?(movie)`
+X `Viewer#reviewed_movie?(movie)`
   - a `Movie` instance is the only argument
   - returns `true` if the `Viewer` has reviewed this `Movie` (if there is a `Review` instance that has this `Viewer` and `Movie`), returns `false` otherwise
-- `Viewer#rate_movie(movie, rating)`
+X `Viewer#rate_movie(movie, rating)`
   - a `Movie` instance and a rating (number) are passed in as arguments
   - if the `Viewer` instance and the passed `Movie` instance are _not_ already associated, this method should create a new `Review` instance
   - if this `Viewer` has already reviewed this `Movie`, assigns the new rating to the existing `Review` instance
 
 #### Movie
 
-- `Movie#average_rating`
+X `Movie#average_rating`
   - returns the average of all ratings for the `Movie` instance
   - to average ratings, add all ratings together and divide by the total number of ratings.
-- `Movie.highest_rated`
+? `Movie.highest_rated`
   - returns the `Movie` instance with the highest average rating.
 
 ## Rubric
