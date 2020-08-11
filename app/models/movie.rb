@@ -36,4 +36,4 @@ class Movie
     self.all.max_by {|movie_instance| movie_instance.average_rating}
   end
 
-end
+end #of Movie class

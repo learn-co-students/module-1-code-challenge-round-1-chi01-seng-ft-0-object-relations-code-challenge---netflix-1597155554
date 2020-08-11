@@ -23,7 +23,7 @@ class Viewer
   #instance method that return movies reviewed by viewer
   def reviewed_movies
     self.reviews.map {|review| review.movie}
-  end
+  end 
 
   #instance method that returns whether or not viewer instance reviewed movie argument
   def reviewed_movie?(movie)
@@ -35,12 +35,9 @@ class Viewer
     if !self.reviewed_movie?(movie)
       Review.new(self, movie, rating)
     else
-      Review.all.each do |review_instance|
-        if review_instance.viewer == self && review_instance.movie == movie 
-          review_instance.rating = rating
-        end
-      end
-    end
-  end
+      found_review = Review.all.find {|review_instance| review_instance.viewer == self && review_instance.movie == movie}
+          found_review.rating = rating
+    end #of if statement
+  end #of rate_movie method
   
-end
+end #of Viewer class

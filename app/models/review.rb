@@ -18,5 +18,4 @@ class Review
         @@all 
     end
 
-
-end
+end #of Review class
