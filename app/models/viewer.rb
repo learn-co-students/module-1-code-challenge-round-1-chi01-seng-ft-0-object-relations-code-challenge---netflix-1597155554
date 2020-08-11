@@ -8,19 +8,20 @@ class Viewer
     self.class.all << self
   end
 
+  #returns an array of `Review` instances associated with the `Viewer` instance
+  def reviews # ex: v1.reviews
+    Review.all.select { |review_instance| review_instance.viewer == self }
+  end
+
+  # returns an array of `Movie` instances reviewed by the `Viewer` instance.
+  def reviewed_movies # ex: v2.reviewed_movies
+    viewer_reviews_array = self.reviews.map { |review_instance| review_instance.movie }
+    viewer_reviews_array.uniq
+  end
+
+
   def self.all
     @@all
   end
   
 end
-
-
-# - `Viewer#initialize(username)`
-#   - `Viewer` is initialized with a username (string)
-#   - username **can be** changed after the Viewer is initialized
-
-# - `Viewer#username`
-#   - returns the Viewer's username
-
-# - `Viewer.all`
-#   - returns an array of all the Viewer instances that have been initialized
