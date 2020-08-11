@@ -13,3 +13,14 @@ class Movie
   end
 
 end
+
+
+# Movie#initialize(title)
+# Movie is initialized with a title (string)
+# title can be changed after the Movie is initialized
+
+# Movie#title
+# returns the Movie's title
+
+# Movie.all
+# returns an array of all the Movie instances that have been initialized
