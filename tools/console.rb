@@ -18,7 +18,7 @@ end
 movie1 = Movie.new('spider-man')
 movie2 = Movie.new('Your name')
 movie3 = Movie.new('the light house') 
-movie4 = Movie.new('Jojo Rabbit')
+movie4 = Movie.new('ex machina')
 
 
 #VIEWER INSTANCES 
@@ -37,7 +37,7 @@ viewer4 = Viewer.new('quirotagoras')
 review1 = Review.new(viewer1, movie1, 4.6)
 review2 = Review.new(viewer2, movie3, 4)
 review3 = Review.new(viewer3, movie2, 4.9)
-review4 = Review.new(viewer4, movie4,4.3)
+review4 = Review.new(viewer4, movie4, 4.3)
 review5 = Review.new(viewer1, movie3, 4.5)
 review6 = Review.new(viewer2, movie2, 4.7)
 
