@@ -23,11 +23,11 @@ class Viewer
   def reviewed_movie?(movie) # ex: v1.reviewed_movie?(m1)
     # iterate through all reviews Review.all and ask any?
     # based on condition  review_instance.movie == movie && review_instance.viewer == self
-    Review.all.any? { |review_instance| review_instance.movie == movie && review_instance.viewer == self }
+    self.reviewed_movies.include?(movie)
   end
 
   def rate_movie(movie, rating) # ex: v1.rate_movie(m1, 9) => true
-    if self.reviewed_movie?(movie) == true
+    if self.reviewed_movie?(movie)
       matching_review_instance = Review.all.select { |review_instance| review_instance.viewer == self }
       matching_review_instance[0].rating = rating
     else Review.new(self, movie, rating)
