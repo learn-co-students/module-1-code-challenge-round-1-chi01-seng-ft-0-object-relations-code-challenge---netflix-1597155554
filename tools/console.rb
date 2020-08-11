@@ -13,6 +13,7 @@ m1 = Movie.new('Sunless')
 m2 = Movie.new('An American Pickle')
 m3 = Movie.new('Eternal Sunshine of a Spotless Mind')
 m4 = Movie.new('Happy')
+m5 = Movie.new('Happy')
 
 # VIEWER INSTANCES username
 v1 = Viewer.new('nataliag')
@@ -24,6 +25,10 @@ r1 = Review.new(v1, m1, 8)
 r2 = Review.new(v2, m1, 8)
 r3 = Review.new(v2, m2, 8)
 r4 = Review.new(v3, m4, 1)
+
+# TESTS
+# p v1.rate_movie(m1, 9)
+# p Review.all
 
 # NOTES
 # Viewer -< Review >- Movie

@@ -8,7 +8,6 @@ class Review
         @viewer = viewer
         @movie = movie
         @rating = rating
-
         self.class.all << self
     end
 
