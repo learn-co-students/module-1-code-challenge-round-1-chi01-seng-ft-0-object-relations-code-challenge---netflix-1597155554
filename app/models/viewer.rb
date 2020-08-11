@@ -19,9 +19,23 @@ class Viewer
     viewer_reviews_array.uniq
   end
 
+  #returns `true` if the `Viewer` has reviewed this `Movie` 
+  def reviewed_movie?(movie) # ex: v1.reviewed_movie?(m1)
+    # iterate through all reviews Review.all and ask any?
+    # based on condition  review_instance.movie == movie && review_instance.viewer == self
+    Review.all.any? { |review_instance| review_instance.movie == movie && review_instance.viewer == self }
+  end
+
+  def rate_movie(movie, rating) # ex: v1.rate_movie(m1, 9) => true
+    if self.reviewed_movie?(movie) == true
+      matching_review_instance = Review.all.select { |review_instance| review_instance.viewer == self }
+      matching_review_instance[0].rating = rating
+    else Review.new(self, movie, rating)
+    end
+  end
 
   def self.all
     @@all
   end
   
-end
+end # end of Viewer class
