@@ -6,7 +6,7 @@ We have three models: `Viewer`, `Movie`, and `Review`.
 
 A `Movie` has many `Review`s. A `Viewer` has many `Review`s. A `Review` belongs to a `Viewer` and belongs to a `Movie`.
 
-`Viewer` - `Movie` is a many to many relationship.
+`Viewer` -<'Review'>- `Movie` is a many to many relationship.
 
 **Note**: You should draw your domain on paper or on a whiteboard _before you start coding_. Remember to identify a single source of truth for your data.
 
@@ -46,40 +46,40 @@ Some of the methods listed are provided to you in the starter code. You should c
 
 #### Movie
 
-- `Movie#initialize(title)`
+X `Movie#initialize(title)`
   - `Movie` is initialized with a title (string)
   - title **can be** changed after the `Movie` is initialized
-- `Movie#title`
+X `Movie#title`
   - returns the `Movie`'s title
-- `Movie.all`
+X `Movie.all`
   - returns an array of all the `Movie` instances that have been initialized
 
 #### Viewer
 
-- `Viewer#initialize(username)`
+X `Viewer#initialize(username)`
   - `Viewer` is initialized with a username (string)
   - username **can be** changed after the Viewer is initialized
-- `Viewer#username`
+X `Viewer#username`
   - returns the Viewer's username
-- `Viewer.all`
+X `Viewer.all`
   - returns an array of all the Viewer instances that have been initialized
 
 #### Review
 
-- `Review#initialize(viewer, movie, rating)`
+X `Review#initialize(viewer, movie, rating)`
   - `Review` is initialized with a `Viewer` instance, a `Movie` instance, and a rating (number)
-- `Review#rating`
+X `Review#rating`
   - returns the rating for the `Review` instance
-- `Review.all`
+X `Review.all`
   - returns an array of all initialized `Review` instances
 
 ### Object Relationship Methods
 
 #### Review
 
-- `Review#viewer`
+X `Review#viewer`
   - returns the `Viewer` instance associated with the `Review` instance
-- `Review#movie`
+x `Review#movie`
   - returns the `Movie` instance associated with the `Review` instance
 
 #### Viewer
