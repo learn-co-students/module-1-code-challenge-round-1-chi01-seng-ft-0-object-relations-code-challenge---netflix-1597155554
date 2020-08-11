@@ -35,8 +35,7 @@ class Viewer
     if !self.reviewed_movie?(movie)
       Review.new(self, movie, rating)
     else
-      found_review = Review.all.find {|review_instance| review_instance.viewer == self && review_instance.movie == movie}
-          found_review.rating = rating
+      Review.all.find {|review_instance| review_instance.viewer == self && review_instance.movie == movie}.rating = rating 
     end #of if statement
   end #of rate_movie method
   
