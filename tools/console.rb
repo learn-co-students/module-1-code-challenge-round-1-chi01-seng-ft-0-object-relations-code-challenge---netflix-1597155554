@@ -31,12 +31,14 @@ r5 = Review.new(v3, m5, 1)
 # p v1.rate_movie(m1, 9)
 # p Review.all
 
-pp Movie.highest_rated
+# pp Movie.highest_rated
+# pp v1.rate_movie(m5, 9)
+# pp Review.all
 
 # NOTES
 # Viewer -< Review >- Movie
 # Review is the joiner!
 
 # ===== WARNING! DO NOT EDIT BELOW THIS LINE ===== #
-# binding.pry
-# 0
+binding.pry
+0

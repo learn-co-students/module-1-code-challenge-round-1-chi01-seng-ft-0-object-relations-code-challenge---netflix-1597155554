@@ -28,8 +28,8 @@ class Viewer
 
   def rate_movie(movie, rating) # ex: v1.rate_movie(m1, 9) => true
     if self.reviewed_movie?(movie)
-      matching_review_instance = Review.all.select { |review_instance| review_instance.viewer == self }
-      matching_review_instance[0].rating = rating
+      matching_review_instance = Review.all.find { |review_instance| review_instance.viewer == self }
+      matching_review_instance.rating = rating
     else Review.new(self, movie, rating)
     end
   end
